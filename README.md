@@ -1,15 +1,15 @@
-### Postgres CDC by monitoring and parsing the WAL
+## Postgres CDC by monitoring and parsing the WAL
 
-## Description
+### Description
 This is a fully functional utility which monitors and parses Postgres' Write Ahead Log for DML changes. The tables (relations as they're called in SQL and WAL parlance), whose changes are recorded, pass their composition (nr of columns, their data types, whether they are part of the transaction key, etc) so DDL changes are reflected in real time as well, enabling leveraging those changes downstream to data storage targets.
 
-## Prerequisites:
+### Prerequisites:
     1.  Postgres installed - any version above and including 10 is recommended (version used here is 17). 
     2.  Any database IDE like PGAdmin, DBeaver, DBArtisan is also needed.
     3.  Python (version used here is 3.13.5)
 
 
-## Getting Started
+### Getting Started
     1.  Enable WAL (specifically Logical Replication ) in your Postgres postgresql.conf file
         
         Locate your postgresql.conf file. The best way is to issue the following command in your database IDE:
