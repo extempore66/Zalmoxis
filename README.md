@@ -46,7 +46,7 @@ This is a fully functional utility which monitors and parses Postgres' Write Ahe
                 (alternatively you can create publication for all tables):
                     CREATE PUBLICATION ms_cdc_publication FOR ALL TABLES;
 
-                (if you want to see the ublications created):
+                (if you want to see the publications created):
                     select * from pg_publication;
 
         Create a Logical Replication Slot. A Replication Slot ensures that the WAL files are not deleted by Postgres until they 
