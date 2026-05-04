@@ -1,7 +1,10 @@
 ## Postgres CDC by monitoring and parsing the WAL
 
 ### Description
-This is a fully functional utility which monitors and parses Postgres' Write Ahead Log for DML changes. The tables (relations as they're called in SQL and WAL parlance), whose changes are recorded, pass their composition (nr of columns, their data types, whether they are part of the transaction key, etc) so DDL changes are reflected in real time as well, enabling leveraging those changes downstream to data storage targets.
+This is a fully functional utility which monitors and parses Postgres' Write Ahead Log for DML changes. The tables (relations as 
+they're called in SQL and WAL parlance), whose changes are recorded, pass their composition (nr of columns, their data types, whether 
+they are part of the transaction key, etc) so DDL changes are reflected in real time as well, enabling leveraging those changes 
+downstream to data storage targets.
 
 ### Prerequisites:
     1.  Postgres installed - any version above and including 10 is recommended (version used here is 17). 
@@ -49,12 +52,13 @@ This is a fully functional utility which monitors and parses Postgres' Write Ahe
                 (if you want to see the publications created):
                     select * from pg_publication;
 
-        Create a Logical Replication Slot. A Replication Slot ensures that the WAL files are not deleted by Postgres until they 
-        have been processed by your consumer. Using the 'pgoutput' plugin (standard since Postgres 10):
+        Create a Logical Replication Slot. A Replication Slot ensures that the WAL files are not deleted by Postgres
+        until they have been processed by your consumer. Using the 'pgoutput' plugin (standard since Postgres 10):
             SELECT * FROM pg_create_logical_replication_slot('ms_cdc_slot', 'pgoutput');
 
 
-        If you want to see the actual values of the changes reflected in the monitoring script, (this tells Postgres to include the old values of all columns in the WAL):
+        If you want to see the actual values of the changes reflected in the monitoring script, (this tells Postgres to 
+        include the old values of all columns in the WAL):
             ALTER TABLE table_cdc_wal_1 REPLICA IDENTITY FULL;
             ALTER TABLE table_cdc_wal_2 REPLICA IDENTITY FULL;
 
@@ -66,7 +70,8 @@ This is a fully functional utility which monitors and parses Postgres' Write Ahe
     
     3. Setup Pythonn environment and import libraries
 
-        Create a directory, switch to it, setup a Python virtual environment and activate it (these are for MacOS / Linux):
+        Create a directory, switch to it, setup a Python virtual environment and activate it (these are for 
+        MacOS / Linux):
             mkdir cdc_test
             cd cdc_test
             python -m venv .venv
