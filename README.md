@@ -130,7 +130,7 @@ downstream to data storage targets.
                 the python cdc script' where col_cdc_wal_1 = '4';
                 commit;
 
-    ### Output
+### Output
         If all goes well, you should see output similar to this:
 
             [B] Transaction Started
