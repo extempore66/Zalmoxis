@@ -118,7 +118,7 @@ downstream to data storage targets.
                 ALTER TABLE table_cdc_wal_2 ADD col_cdc_wal_4 BIGINT;
                 ALTER TABLE table_cdc_wal_2 ADD col_cdc_wal_5 varchar(255);
 
-            Enter some more DDL commands and see the changes of the table columns reflected in the script:
+            Enter some more DML commands and see the changes of the table columns reflected in the script:
                 begin transaction;
                 insert into  table_cdc_wal_2 (col_cdc_wal_1, col_cdc_wal_2, col_cdc_wal_4, col_cdc_wal_5)
                 values(40, 'descval 40', 76543210, 'inserting entire row for pk 40 in table table_cdc_wal_2 as 
