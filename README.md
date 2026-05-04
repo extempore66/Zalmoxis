@@ -130,3 +130,16 @@ downstream to data storage targets.
                 the python cdc script' where col_cdc_wal_1 = '4';
                 commit;
 
+    ### Output
+        If all goes well, you should see output similar to this:
+
+            [B] Transaction Started
+            [R] Relation Mapping: public.table_cdc_wal_2 (ID: 16447)
+            [I] INSERT in table_cdc_wal_2: ['50', 'descval 50', None, '11111222', 'inserting entire row for pk 50 in table table_cdc_wal_2 as 
+                part of a multi table transaction']
+            [R] Relation Mapping: public.table_cdc_wal_1 (ID: 16440)
+            [I] INSERT in table_cdc_wal_1: ['5', 'descval 5', None, '10101010', 'inserting entire row for pk 5 in table table_cdc_wal_1 as 
+                part of a multi table transaction']
+            [U] UPDATE in table_cdc_wal_1 | New Data: ['5', 'descval 5', None, '10101010', 'updating this as part of a multi table transaction testing                     the python cdc script']
+            [C] Transaction Committed
+    
