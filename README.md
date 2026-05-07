@@ -2,6 +2,6 @@
 
 ### Description
 This is a platform with fully functional utilities which monitor and parse Postgres' Write Ahead Log and MySQL's Binlog for DML. 
-The platform is an evolving project with more databases and utilities to be integrated.
+The platform is an evolving project with more databases and utilities to be integrated in the future.
 Details about prerequisites, how to setup the system and how the respective scripts work are found in their respective
 READMMEs: README_PG.md and README_MYSQL.md
