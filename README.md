@@ -2,9 +2,13 @@
 
 ### Description
 This is a fully functional utility which monitors and parses Postgres' Write Ahead Log for DML changes. The tables (relations as 
-they're called in SQL and WAL parlance), whose changes are recorded, pass their composition (nr of columns, their data types, whether 
+they're called in SQL and WAL parlance), whose DML changes are recorded, pass their composition (nr of columns, their data types, whether 
 they are part of the transaction key, etc) so DDL changes are reflected in real time as well, enabling leveraging those changes 
 downstream to data storage targets.
+For management of schema evolution selecting the table / column information from information_schema.tables in conjunction with 
+information_schema.columns system views or pg_class, pg_attribute, pg_type system tables with a certain frequency and comparing the results 
+with the destination gives you a real-time, full view and control of the schemas and thus essentially you have built a perfectly sophisticated,
+quasi automatic system (human intervention can be employed when needed) for hot standby replicas, backups, ETLs, etc.
 
 ### Prerequisites:
     1.  Postgres installed - any version above and including 10 is recommended (version used here is 17). 
