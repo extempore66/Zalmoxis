@@ -1,7 +1,7 @@
 ## MySQL CDC by monitoring and parsing the Binlog
 
 ### Description
-This is a fully functional utility which monitors and parses Postgres' Write Ahead Log for DML changes. The tables (relations as 
+This is a fully functional utility which monitors and parses MySQL's Binlog for DML changes. The tables (relations as 
 they're called in SQL and WAL parlance), whose DML changes are recorded, pass their composition (nr of columns, their data types, whether 
 they are part of the transaction key, etc) so DDL changes are reflected in real time as well, enabling leveraging those changes 
 downstream to data storage targets.
