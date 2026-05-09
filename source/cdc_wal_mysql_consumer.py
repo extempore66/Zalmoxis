@@ -1,3 +1,7 @@
+## MySQL binary log
+## https://dev.mysql.com/doc/refman/9.7/en/binary-log.html
+
+
 from pymysqlreplication import BinLogStreamReader
     from pymysqlreplication.row_event import (
         DeleteRowsEvent,
